@@ -131,38 +131,38 @@ class WriteLeague(Pyse):
 
     #户型_室
     def RoomNum(self):
-        # num = mydef.rad_num(1,5)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[1]/div/input",3)
+        num = mydef.rad_num(1,5)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[1]/div/input",num)
 
     #户型_厅
     def Parlor(self):
         parlor = mydef.rad_num(1,5)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[2]/div/input",3)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[2]/div/input",parlor)
 
     #户型_卫
     def Toilet(self):
-        # toilet = mydef.rad_num(1,5)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[3]/div/input",3)
+        toilet = mydef.rad_num(1,5)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[3]/div/input",toilet)
 
     # 户型_厨房
     def Kitchen(self):
-        # kitchen = mydef.rad_num(1,5)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[4]/div/input",3)
+        kitchen = mydef.rad_num(1,5)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[4]/div/input",kitchen)
 
     #户型_阳台
     def Balcony(self):
-        # balcony = mydef.rad_num(1,5)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[5]/div/input",3)
+        balcony = mydef.rad_num(1,5)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[3]/div/div/div[5]/div/input",balcony)
 
     #面积
     def Area(self):
-        # area = mydef.rad_num(1,200)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[4]/div/div/div/div/input",333)
+        area = mydef.rad_num(1,200)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[4]/div/div/div/div/input",area)
 
     #楼层
     def Floor(self):
-        # floor = mydef.rad_num(1,10)
-        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[5]/div/div/div/div/input",3)
+        floor = mydef.rad_num(1,10)
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[5]/div/div/div[5]/div/div/div/div/input",floor)
 
     # 是否有电梯
     def Elevator(self):
@@ -197,3 +197,14 @@ class WriteLeague(Pyse):
     def SuccessText(self):
         text = self.get_text("xpath=>/html/body/div[2]/p")
         return text
+
+    #预期短租月收益
+    def ExpectProfit(self):
+        pic = 10
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[3]/div/div/div[5]/div[1]/div/div/div/input",pic)
+
+    #长租月租金
+    def LongMonthlyRent(self):
+        p = 100
+        self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[3]/div/div/div[6]/div[1]/div/div/div/input",p)
+

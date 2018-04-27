@@ -14,6 +14,14 @@ from .base import Pyse
 
 class RoomManageListPage(Pyse):
 
+    #房源ID_搜索
+    def SelectID(self,id):
+        self.type("xpath=>//*[@id='pane-fyList']/div/div[1]/div/div[1]/div[3]/div/input",id)
+
+    #去掉wujiaqu
+    def wujiaqu(self):
+        self.click("xpath=>//*[@id='pane-fyList']/div/div[2]/h3/label/span[1]/span")
+
     #房源名称
     def RoomName(self,name):
         self.type("id=>",name)
@@ -26,13 +34,14 @@ class RoomManageListPage(Pyse):
     def Site(self):
         self.click("id=>")
 
-    #房源状态
+    #列表_房源状态
     def RoomState(self):
-        self.click("id=>")
+        text = self.get_text("xpath=>//*[@id='pane-fyList']/div/div[2]/div[1]/div[3]/table/tbody/tr/td[8]/div")
+        return text
 
     #房源ID
     def RoomId(self):
-        self.open_new_window("xpath=>//*[@id='pane-fyList']/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[1]/div/span")
+        self.open_new_window("xpath=>//*[@id='pane-fyList']/div/div[2]/div[1]/div[3]/table/tbody/tr/td[1]/div/span")
 
     #编辑
     def Eidt(self):
@@ -42,11 +51,12 @@ class RoomManageListPage(Pyse):
     def RoomIntroduce(self,introduce):
         self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/div[4]/div/div/form/div[3]/div/div/div/div/div/textarea",introduce)
 
+
     #基础低价
     def FloorPrice(self,price):
         self.type("xpath=>//*[@id='right-box']/div/div[2]/div[1]/div[5]/div/div/form/div[1]/div/div/div/div/input",price)
 
-    #周末类型
+    #周末类型_不设置
     def NoSetUp(self):
         self.click("xpath=>//*[@id='right-box']/div/div[2]/div[1]/div[5]/div/div/form/div[2]/div/div/div/div/label[4]/span[1]/span")
 
@@ -71,11 +81,17 @@ class RoomManageListPage(Pyse):
     def Pass(self):
         self.click("xpath=>//*[@id='right-box']/div/div[2]/div[2]/div[1]/button")
 
-    #完成实拍
-    def RealShot(self):
-        self.click("id=>")
+    #二次确认
+    def TwoPass(self):
+        self.click("xpath=>/html/body/div[3]/div/div[3]/button[2]/span")
 
-    #完成实拍弹窗
-    def ReaShotAlert(self):
-        self.click("id=>")
+    # 退款政策——渠道
+    def SelectRefundChannel(self,i):
+        self.click("xpath=>//*[@id='right-box']/div/div[2]/div[1]/div[5]/div/div/form/div[4]/div/div/div/div/div[1]/label["+i+"]/span")
+
+    #退款政策——支持Or宽松
+    def SelectRefund(self,i="1"):
+        self.click("xpath=>//*[@id='right-box']/div/div[2]/div[1]/div[5]/div/div/form/div[4]/div/div/div/div/div[2]/div/div["+i+"]/label/span[1]/span")
+
+
 

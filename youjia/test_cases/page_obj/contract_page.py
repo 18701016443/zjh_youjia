@@ -79,18 +79,15 @@ class Contract(Pyse):
     def ContractPhoto(self):
         self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[2]/div/div[1]/div/button/span")
 
-
-
-
     #乙方：
     def FirstParty(self):
         name = "张佳恒测试"
-        self.type("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[4]/div[2]/div[1]/div[1]/div[1]/input",name)
+        self.type("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[3]/div[1]/div/div[1]/div[1]/input",name)
 
     #身份证
     def IDcard(self):
         idcard = 341023199909071447
-        self.type("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[4]/div[2]/div[1]/div[1]/div[2]/input",idcard)
+        self.type("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[3]/div[1]/div/div[1]/div[2]/input",idcard)
 
     #代理人
     def Agent(self):
@@ -150,16 +147,16 @@ class Contract(Pyse):
     #权属（租赁）期限
     def ServiceDataStart(self):
         # s = datetime.datetime.now().strftime("%Y-%m-%d")
-        self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[4]/div[3]/div[1]/div[1]/input")
+        self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[3]/div[2]/div[4]/div[1]/input")
         time.sleep(2)
-        self.click("xpath=>/html/body/div[2]/div[1]/div/div[2]/table[1]/tbody/tr[3]/td[3]/div/span")
+        self.click("xpath=>/html/body/div[3]/div[1]/div/div[2]/table[1]/tbody/tr[4]/td[2]/div/span")
 
     def ServiceDataEnd(self):
         # e = (datetime.datetime.now()+datetime.timedelta(days=1)).strftime("%Y-%m-%d")
         # e = "2018-01-07"
-        self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[4]/div[3]/div[1]/div[2]/input")
+        self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[3]/div[2]/div[4]/div[2]/input")
         time.sleep(2)
-        self.click("xpath=>/html/body/div[3]/div[1]/div/div[2]/table[1]/tbody/tr[3]/td[6]/div/span")
+        self.click("xpath=>/html/body/div[4]/div[1]/div/div[2]/table[1]/tbody/tr[4]/td[5]/div/span")
 
     #委托服务期限
     def DataStart(self):
@@ -217,7 +214,7 @@ class Contract(Pyse):
 
     #品牌升级相关费用
     def UpgradeCost(self):
-        cost = mydef.rad_num(1,100)
+        cost = mydef.rad_num(1,10)
         self.type("xpath=>//*[@id='pane-softagreemt']/div/div[7]/form/div[3]/div[1]/div/div/input",cost)
 
     #有家收款账户——银行卡
@@ -277,3 +274,19 @@ class Contract(Pyse):
     #软装合同备注
     def ContractNotes(self,notes):
         self.type("xpath=>//*[@id='pane-softagreemt']/div/div[10]/div/textarea",notes)
+
+
+    #预计交房时间
+    def RoomTime(self):
+        self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[3]/div[2]/div[6]/div/input")
+    def SelectDate(self):
+        self.click("xpath=>/html/body/div[5]/div[1]/div/div[2]/table[1]/tbody/tr[4]/td[3]/div/span")
+        "/html/body/div[5]/div[1]/div/div[2]/table[1]/tbody/tr[4]/td[3]/div/span"
+
+    #预计上线时间
+    def OnlineDate(self):
+        self.click("xpath=>//*[@id='pane-bsJoinagreemt']/div/div[3]/div[2]/div[7]/div/input")
+
+    def SelectOnlineDate(self):
+        self.click("xpath=>/html/body/div[6]/div[1]/div/div[2]/table[1]/tbody/tr[4]/td[6]/div/span")
+

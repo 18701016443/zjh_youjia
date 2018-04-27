@@ -19,7 +19,7 @@ class OwnerH5(Pyse):
 
     #打开H5页面
     def openH5(self):
-        self.opentest("http://test.iyoujia.com/")
+        self.opentest("http://pre.iyoujia.com/")
 
     #成为业主
     def Owner(self):
@@ -41,9 +41,8 @@ class OwnerH5(Pyse):
         self.type("xpath=>//*[@id='loginimage']",LL)
 
     #短信验证码
-    def OwnerMessageInput(self):
-        OM = "123123"
-        self.type("xpath=>//*[@id='dx_login']",OM)
+    def OwnerMessageInput(self,msg):
+        self.type("xpath=>//*[@id='dx_login']",msg)
 
     #获取验证码
     def OwnerMessage(self):
@@ -56,7 +55,7 @@ class OwnerH5(Pyse):
 
     #房源套数
     def OwnerRoomNum(self):
-        num = mydef.rad_num(1,9999)
+        num = mydef.rad_num(1,999)
         self.type("xpath=>//*[@id='house_num']",num)
 
     #省

@@ -9,7 +9,7 @@ class Pyse(object):
     '''
     PO模型基本类，对原生Selenium进行二次封装。
     '''
-    def __init__(self, selenium_driver, base_url='http://testmis.iyoujia.com/#/login'):
+    def __init__(self, selenium_driver, base_url='http://mis.iyoujia.com/#/login'):
         self.driver = selenium_driver
         self.base_url = base_url
         self.timeout = 30
@@ -34,7 +34,6 @@ class Pyse(object):
         self._open(self.url)
 
     def opentest(self,url):
-
         self.driver.get(url)
 
     def find_element_format(self, css):

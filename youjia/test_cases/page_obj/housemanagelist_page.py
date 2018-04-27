@@ -54,7 +54,7 @@ class HouseManagePage(Pyse):
 
     #完成保洁
     def FinishCleaning(self):
-        self.click("xpath=>//*[@id='pane-fwList']/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[11]/div/button[2]/span")
+        self.click("xpath=>//*[@id='pane-fwList']/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[12]/div/button[2]/span")
 
     #完成保洁弹窗——确认按钮
     def PassBtn(self):
@@ -125,8 +125,53 @@ class HouseManagePage(Pyse):
         text = self.get_text("xpath=>//*[@id='pane-fwList']/div/div[2]/div[1]/div[3]/table/tbody/tr/td[9]/div/span")
         return text
 
-    # #预约交接
-    # def
+    #预约交接
+    def Appointment(self):
+        self.click("xpath=>//*[@id='pane-fwList']/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[12]/div/button[2]/span")
+
+    #请录入与业主预约的交接时间
+    def AppointmentDate(self):
+        self.click("xpath=>//*[@id='pane-fwList']/div/div[2]/div[6]/div/div[2]/div/input")
+    def ThisMoment(self):
+        self.click("xpath=>/html/body/div[4]/div[2]/button[1]/span")
+
+    #确定
+    def Determine(self):
+        self.click("xpath=>//*[@id='pane-fwList']/div/div[2]/div[6]/div/div[3]/div/button[2]/span")
+
+
+    #完成交接
+    def CompleteAppointment(self):
+        self.open_new_window("xpath=>//*[@id='pane-fwList']/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[12]/div/button[3]/span")
+
+
+    #上传图片
+    def AppointmentPicture(self):
+        self.click("xpath=>//*[@id='right-box']/div/div[2]/div[1]/div[2]/div/div[1]/div/button/span")
+
+    #预计筹建完成日
+    def CompletionDate(self):
+        self.click("xpath=>//*[@id='right-box']/div/div[2]/div[1]/form/div[1]/div/div/div[3]/div/input")
+    def CompletionDateNow(self):
+        self.click("xpath=>/html/body/div[2]/div[2]/button[1]/span")
+
+    #保存
+    def AppointmentSave(self):
+        self.click("xpath=>//*[@id='right-box']/div/div[2]/div[2]/div/button/span")
+
+    #完成验收
+    def CompletionOfAcceptance(self):
+        self.open_new_window("xpath=>//*[@id='pane-fwList']/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[12]/div/button[2]/span")
+    def CompletionOfAcceptanceSave(self):
+        self.click("xpath=>//*[@id='right-box']/div/div[2]/div[2]/div/button/span")
+
+    #弹窗——编辑房屋
+    def AlertEditHouse(self):
+        self.open_new_window("xpath=>//*[@id='right-box']/div/div[3]/div/div[3]/div/button[2]/span")
+
+
+
+
 
 
 
