@@ -19,7 +19,8 @@ from models import myunit,mydef,configdb
 from time import sleep
 import unittest,os
 
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(BASE_DIR+r"\data\up.exe "+BASE_DIR+r"\images\2.jpg")
 
 class TestData(myunit.MyTest):
 
@@ -118,7 +119,7 @@ class TestData(myunit.MyTest):
         #          ②北京昌平线索：756
         #          ③上海线索：757
         #线上环境：线索ID：6321，13918
-        cooperation_page.CooperationPage(self.driver).CooperationID(13918)
+        cooperation_page.CooperationPage(self.driver).CooperationID(858)
         sleep(2)
 
         #去掉五家渠，让五家渠数据可以显示
@@ -178,7 +179,7 @@ class TestData(myunit.MyTest):
         sleep(2)
 
         #调用Auto上传图片
-        writeleague_page.WriteLeague(self.driver).AutoIt()
+        os.system(BASE_DIR+r"/data/up.exe "+BASE_DIR+r"\images\2.jpg")
         sleep(2)
 
         # 选择房屋类型——民居
@@ -288,7 +289,7 @@ class TestData(myunit.MyTest):
         sleep(2)
 
         #调用AutoIt完成上传图片
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(1)
 
         #乙方姓名
@@ -350,7 +351,7 @@ class TestData(myunit.MyTest):
         #点击上传图片按钮并上传
         contract_page.Contract(self.driver).SoftContractUp()
         sleep(2)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #点击提交审核
@@ -412,7 +413,7 @@ class TestData(myunit.MyTest):
         #上传图片
         housemanagelist_page.HouseManagePage(self.driver).AppointmentPicture()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(1)
 
         #预计筹建完成日——弹出时间控件
@@ -466,37 +467,37 @@ class TestData(myunit.MyTest):
         # 上传封面照片
         housemanagelist_page.HouseManagePage(self.driver).Cover()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #上传客厅照片
         housemanagelist_page.HouseManagePage(self.driver).Parlour()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #上传卧室图片
         housemanagelist_page.HouseManagePage(self.driver).Bedroom()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #上传厨房图片
         housemanagelist_page.HouseManagePage(self.driver).Kitchen()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #上传卫浴照片
         housemanagelist_page.HouseManagePage(self.driver).Bathroom()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #上传其他照片
         housemanagelist_page.HouseManagePage(self.driver).Other()
         sleep(1)
-        os.system("D:/python/youjia/data/up.exe")
+        os.system(BASE_DIR + r"/data/up.exe " + BASE_DIR + r"\images\2.jpg")
         sleep(2)
 
         #点击提交
@@ -546,7 +547,7 @@ class TestData(myunit.MyTest):
 
             """
             默认都是选择1。
-            1：不支持退款 2：宽松 
+            1：不支持退款 2：宽松
             PS：Airbnb 1对应的是宽松
            """
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefund("1")
