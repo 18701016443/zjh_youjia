@@ -36,7 +36,7 @@ class RoomManageListPage(Pyse):
 
     #列表_房源状态
     def RoomState(self):
-        text = self.get_text("xpath=>//*[@id='pane-fyList']/div/div[2]/div[1]/div[3]/table/tbody/tr/td[8]/div")
+        text = self.get_text("xpath=>//*[@id='pane-fyList']/div/div[2]/div[1]/div[3]/table/tbody/tr/td[9]/div")
         return text
 
     #房源ID

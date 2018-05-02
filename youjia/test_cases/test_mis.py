@@ -119,7 +119,7 @@ class TestData(myunit.MyTest):
         #          ②北京昌平线索：756
         #          ③上海线索：757
         #线上环境：线索ID：6321，13918
-        cooperation_page.CooperationPage(self.driver).CooperationID(858)
+        cooperation_page.CooperationPage(self.driver).CooperationID(13918)
         sleep(2)
 
         #去掉五家渠，让五家渠数据可以显示
@@ -512,13 +512,13 @@ class TestData(myunit.MyTest):
 
         #编辑房源
         nav_page.NavPage(self.driver).RoomManageList()
-        sleep(0.5)
+        sleep(1)
 
         #查询条件——输入房源id
         roommanagelist_page.RoomManageListPage(self.driver).SelectID(id)
         sleep(1)
         roommanagelist_page.RoomManageListPage(self.driver).wujiaqu()
-        sleep(0.5)
+        sleep(1)
         if roommanagelist_page.RoomManageListPage(self.driver).RoomState() == "待补充":
 
             #进入房源详情页
@@ -527,23 +527,23 @@ class TestData(myunit.MyTest):
 
             #点击编辑按钮
             roommanagelist_page.RoomManageListPage(self.driver).Eidt()
-            sleep(0.5)
+            sleep(2)
 
             #输入房源简介
             roommanagelist_page.RoomManageListPage(self.driver).RoomIntroduce("测试测试测试")
-            sleep(0.5)
+            sleep(1)
 
             #输入日价
             roommanagelist_page.RoomManageListPage(self.driver).FloorPrice(60)
-            sleep(0.5)
+            sleep(1)
 
             #不设置周末价
             roommanagelist_page.RoomManageListPage(self.driver).NoSetUp()
-            sleep(0.5)
+            sleep(1)
 
             #输入押金
             roommanagelist_page.RoomManageListPage(self.driver).yajin(1)
-            sleep(0.5)
+            sleep(1)
 
             """
             默认都是选择1。
@@ -551,29 +551,29 @@ class TestData(myunit.MyTest):
             PS：Airbnb 1对应的是宽松
            """
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefund("1")
-            sleep(0.5)
+            sleep(1)
 
             """SelectRefundChannel()选择渠道1：蚂蚁 2：有家 3：途家 4：Airbnb"""
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefundChannel("2")
-            sleep(0.5)
+            sleep(1)
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefund()
-            sleep(0.5)
+            sleep(1)
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefundChannel("3")
-            sleep(0.5)
+            sleep(1)
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefund()
-            sleep(0.5)
+            sleep(1)
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefundChannel("4")
-            sleep(0.5)
+            sleep(1)
             roommanagelist_page.RoomManageListPage(self.driver).SelectRefund()
-            sleep(0.5)
+            sleep(1)
 
             #入住人数
             roommanagelist_page.RoomManageListPage(self.driver).pople(4)
-            sleep(0.5)
+            sleep(1)
 
             #输入其他须知
             roommanagelist_page.RoomManageListPage(self.driver).Other("测试ceshi测试ceshi")
-            sleep(0.5)
+            sleep(1)
 
             #点击提交
             roommanagelist_page.RoomManageListPage(self.driver).Submit()
@@ -581,21 +581,21 @@ class TestData(myunit.MyTest):
 
         #进入房源并审核通过
         roommanagelist_page.RoomManageListPage(self.driver).SelectID(id)
-        sleep(0.5)
+        sleep(1)
         roommanagelist_page.RoomManageListPage(self.driver).wujiaqu()
         sleep(1)
         roommanagelist_page.RoomManageListPage(self.driver).RoomId()
         sleep(1)
         roommanagelist_page.RoomManageListPage(self.driver).Pass()
-        sleep(0.5)
+        sleep(1)
         roommanagelist_page.RoomManageListPage(self.driver).TwoPass()
-        sleep(0.5)
+        sleep(1)
 
         #判断房源状态是否改为上线
         roommanagelist_page.RoomManageListPage(self.driver).SelectID(id)
-        sleep(0.5)
+        sleep(1)
         roommanagelist_page.RoomManageListPage(self.driver).wujiaqu()
-        sleep(0.5)
+        sleep(1)
         assert roommanagelist_page.RoomManageListPage(self.driver).RoomState() == "已上线"
 
 

@@ -71,54 +71,54 @@ class HouseManagePage(Pyse):
         return id
 
 
-    #编辑房屋
+    #编辑基础信息
     def EditHouse(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[2]/div/button/span")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[2]/div[2]/button/span")
 
     #房屋标题
     def HouseTitle(self,title):
-        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[2]/div/div/form/div[1]/div/div/div/div/input",title)
+        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[3]/div/div/form/div[1]/div/div/div/div/input",title)
 
     #房屋简称
     def HouseNickAbbreviation(self,Abbreviation):
-        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[2]/div/div/form/div[2]/div/div/div/div/input",Abbreviation)
+        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[3]/div/div/form/div[2]/div/div/div/div/input",Abbreviation)
 
     #电器设备——淋浴
     def Shower(self,shower):
-        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[4]/div/div/form/div[2]/div[1]/div/div/div/div/input",shower)
+        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/form/div[2]/div[1]/div/div/div/div/input",shower)
 
     #床——单人床（2*0.8）
     def SingleBed(self,bed):
-        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[4]/div/div/form/div[4]/div[1]/div/div/div/div/input",bed)
+        self.type("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/form/div[4]/div[1]/div/div/div/div/input",bed)
 
     #房屋照片
     #封面
     def Cover(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/div[1]/div/div/i")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[6]/div/div/div[1]/div/div/i")
 
     #客厅
     def Parlour(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/div[2]/div/div/div/button/span")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[6]/div/div/div[2]/div/div/div/button")
 
     #卧室
     def Bedroom(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/div[3]/div/div/div/button/span")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[6]/div/div/div[3]/div/div/div/button/span")
 
     #厨房
     def Kitchen(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/div[4]/div/div/div/button")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[6]/div/div/div[4]/div/div/div/button/span")
 
     #卫浴
     def Bathroom(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/div[5]/div/div/div/button/span")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[6]/div/div/div[5]/div/div/div/button/span")
 
     #其他
     def Other(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[5]/div/div/div[6]/div/div/div/button/span")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[1]/div[6]/div/div/div[6]/div/div/div/button/span")
 
-    #提交
+    #提交基础信息
     def submitBtn(self):
-        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[2]/div/button/span")
+        self.click("xpath=>//*[@id='pane-bsJoinfwDetail']/div/div[2]/div[2]/button/span")
 
     #房屋列表——房屋状态
     def ListHouseState(self):
@@ -168,6 +168,8 @@ class HouseManagePage(Pyse):
     #弹窗——编辑房屋
     def AlertEditHouse(self):
         self.open_new_window("xpath=>//*[@id='right-box']/div/div[3]/div/div[3]/div/button[2]/span")
+
+
 
 
 

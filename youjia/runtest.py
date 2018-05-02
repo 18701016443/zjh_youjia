@@ -78,7 +78,7 @@ if __name__ == "__main__":
     fp = open(filename,"w")
     runner = HTMLTestRunner(stream=fp,
                             title="PC自动化测试报告",
-                            description ="环境 win10  浏览器：谷歌/59版")
+                            description="环境 win10  浏览器：谷歌/65版")
 
     discover = unittest.defaultTestLoader.discover("./test_cases/",
                                                    pattern="test_*.py")
