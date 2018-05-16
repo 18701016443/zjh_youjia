@@ -9,9 +9,15 @@ class Pyse(object):
     '''
     PO模型基本类，对原生Selenium进行二次封装。
     '''
-    def __init__(self, selenium_driver, base_url='http://mis.iyoujia.com/#/login'):
+    def __init__(self, selenium_driver,canshu):
         self.driver = selenium_driver
-        self.base_url = base_url
+        base_url = ["http://testmis.iyoujia.com/#/login", "http://premis.iyoujia.com/#/login","http://mis.iyoujia.com/#/login"]
+        if canshu == "test":
+            self.base_url = base_url[0]
+        if canshu == "pre":
+            self.base_url = base_url[1]
+        if canshu == "prod":
+            self.base_url = base_url[2]
         self.timeout = 30
 
     def _open(self, url):

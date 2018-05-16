@@ -19,7 +19,7 @@ class OwnerH5(Pyse):
 
     #打开H5页面
     def openH5(self):
-        self.opentest("http://pre.iyoujia.com/")
+        self.opentest("http://www.iyoujia.com/")
 
     #成为业主
     def Owner(self):
@@ -32,12 +32,11 @@ class OwnerH5(Pyse):
 
     #手机号
     def OwnerPhone(self):
-        phone = "18701016443"
+        phone = "17601052158"
         self.type("xpath=>//*[@id='phone']", phone)
 
     #图形验证码
-    def OwnerPicture(self):
-        LL = "aaa"
+    def OwnerPicture(self,LL):
         self.type("xpath=>//*[@id='loginimage']",LL)
 
     #短信验证码

@@ -11,7 +11,6 @@
 from .base import Pyse
 from time import sleep
 from models import configdb
-from models import getChromeCookie
 
 
 
@@ -35,6 +34,10 @@ class LoginPage(Pyse):
     #图片验证码
     def P_PictureCode(self,code):
         self.type("xpath=>//*[@id='app']/div/div/div/div[2]/section[1]/form/div[3]/div/div[1]/input",code)
+
+    #登陆按钮
+    def P_LoginBtn(self):
+        self.click("xpath=>//*[@id='app']/div/div/div/div[2]/section[1]/form/div[4]/div/button/span")
 
     """
     手机验证码登录
@@ -74,22 +77,13 @@ class LoginPage(Pyse):
         return t
 
 
-
-
-
-
-
-
-
-
-
-
     # 其他页面调用使用
     def Login(self):
         self.open()
+        sleep(2)
         # #手动登录
         self.PhoneLogin()
-        sleep(0.5)
+        sleep(2)
         self.LoginPhone(17601052158)
         self.PictureCode()
         sleep(5)
